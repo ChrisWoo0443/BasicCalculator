@@ -6,10 +6,7 @@ using namespace std;
 
 //constructor
 CalcFunctions::CalcFunctions(){
-    firstNum = NULL;
     oper = ' ';
-    secNum = NULL;
-    answer = NULL;
 }
 
 
@@ -29,7 +26,7 @@ void CalcFunctions::setSec(double num2){
 void CalcFunctions::display(){
     cout << "-------------------------------" << endl;
     line1();
-    if(secNum != NULL){
+    if(!secNum){
         line2();
     }
     else{
@@ -55,7 +52,8 @@ void CalcFunctions::line1(){
     os << firstNum;
     string operation = os.str();
     ostringstream is;
-    if(secNum != NULL){
+
+    if(!secNum){
         is << secNum;
         operation += oper;
         os << secNum;
@@ -75,7 +73,7 @@ void CalcFunctions::line1(){
         }
         cout << operation << " -" << endl;
     }
-    else if(firstNum != NULL){
+    else if(!firstNum){
         cout << "-";
         for(unsigned i = 0; i < 28 - operation.length(); i++){
             cout << " ";
@@ -93,7 +91,7 @@ void CalcFunctions::line2(){
     fs << answer;
     string result = fs.str();
 
-    if(answer != NULL){
+    if(!answer){
         cout << "-";
         for(unsigned i = 0; i < 28 - result.length(); i++){
             cout << " ";

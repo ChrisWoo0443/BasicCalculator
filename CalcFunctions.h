@@ -24,7 +24,6 @@ class CalcFunctions{
         void line2();
 
         void operations();
-
 };
 
 
