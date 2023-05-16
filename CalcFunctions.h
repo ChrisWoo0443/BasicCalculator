@@ -1,15 +1,28 @@
 #ifndef _CalcFunctions_h_
 #define _CalcFunctions_h_
+#include <sstream>
 
 
-template<typename T>
 class CalcFunctions{
-    T addition(T x, T, y);
-    T subtraction(T x, T y);
-    T multiplication(T x, T y);
-    T division(T x, T y);
+
+    private:
+        double firstNum;
+        double secNum;
+        char oper;
+
+    public:
+        CalcFunctions();
+
+
+        void setFirst(double);
+        void setOper(char);
+        void setSec(double);
+
+        void display(); //display the numbers on the screen
+        void screen();
+
 };
 
 
-
 #endif
+
