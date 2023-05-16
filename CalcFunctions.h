@@ -9,6 +9,7 @@ class CalcFunctions{
         double firstNum;
         double secNum;
         char oper;
+        double answer;
 
     public:
         CalcFunctions();
@@ -19,7 +20,10 @@ class CalcFunctions{
         void setSec(double);
 
         void display(); //display the numbers on the screen
-        void screen();
+        void line1();
+        void line2();
+
+        void operations();
 
 };
 
