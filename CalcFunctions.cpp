@@ -31,8 +31,6 @@ void CalcFunctions::setSec(double num2){
 void CalcFunctions::display(){
     cout << "Calculator" << endl;
     cout << "-------------------------------" << endl;
-    // cout << "-                             -" << endl;
-    // cout << "-                             -" << endl;
     screen();
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
@@ -40,11 +38,11 @@ void CalcFunctions::display(){
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
-    cout << "-              |       /      -" << endl;
+    cout << "-      *       |       /      -" << endl;
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
-    cout << "-      ^2      |       !      -" << endl;
+    cout << "-      ^2      |      ANS     -" << endl;
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
 }
@@ -84,5 +82,11 @@ void CalcFunctions::screen(){
     else{
         cout << "-                             -" << endl;
     }
-    cout << "-                             -" << endl;
+    cout << "-                             -" << endl; 
 }
+
+
+
+
+
+
