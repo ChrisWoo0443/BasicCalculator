@@ -20,9 +20,6 @@ int main(){
     string lastResult;
     string lastEquation;
 
-
-
-
     while(nums != "q"){
         system("clear");
         CalcFunctions calc1;
