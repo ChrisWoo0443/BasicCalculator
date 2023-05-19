@@ -45,8 +45,8 @@ void CalcFunctions::display(){
     cout << "-      *       |       /      -" << endl;
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
-    cout << "-              |              -" << endl;
-    cout << "-              |      ANS     -" << endl;
+    cout << "-     OFF      |              -" << endl;
+    cout << "-     'q'      |      ANS     -" << endl;
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
 }

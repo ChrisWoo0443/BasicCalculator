@@ -18,7 +18,7 @@ int main(){
 
     string result;
 ;
-    while(nums != "y"){
+    while(nums != "q"){
         system("clear");
         CalcFunctions calc1;
         string num1, num2;
@@ -27,39 +27,58 @@ int main(){
         calc1.setAnswer(result);
         calc1.display();
 
+        //first user input
         cin >> num1;
-        if(num1 == "ANS"){
-            calc1.setFirst(result);
-        }
-        else{
-            calc1.setFirst(num1);
-        }
-        system("clear");
-        calc1.display();
+        if(num1 != "q"){
+            if(num1 == "ANS"){
+                calc1.setFirst(result);
+            }
+            else{
+                calc1.setFirst(num1);
+            }
+            system("clear");
+            calc1.display();
 
-        cin >> op;
-        while(isdigit(op)){
-            cout << "Error: not an operator, try again" << endl;
+            //operator
             cin >> op;
-        }
-        calc1.setOper(op);
-        system("clear");
-        calc1.display();
+            if(op != 'q'){
+                while(isdigit(op)){
+                    cout << "Error: not an operator, try again" << endl;
+                    cin >> op;
+                }
+                calc1.setOper(op);
+                system("clear");
+                calc1.display();
 
-        cin >> num2;
-        if(num2 == "ANS"){
-            calc1.setSec(result);
+                //second user input
+
+                cin >> num2;
+                if(num2 != "q"){
+                    if(num2 == "ANS"){
+                        calc1.setSec(result);
+                    }
+                    else{
+                        calc1.setSec(num2);
+                    }
+                    system("clear");
+                    calc1.display();
+
+                    // cout << "OFF (y/n)" << endl;
+                    // cin >> nums;
+
+                    result = calc1.getAnswer();
+                }
+                else{
+                    nums = "q";
+                }
+            }
+            else{
+                nums = "q";
+            }
         }
         else{
-            calc1.setSec(num2);
+            nums = "q";
         }
-        system("clear");
-        calc1.display();
-
-        cout << "OFF (y/n)" << endl;
-        cin >> nums;
-
-        result = calc1.getAnswer();
     }
     system("clear");
 }
