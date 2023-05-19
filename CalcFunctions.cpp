@@ -4,34 +4,32 @@
 
 using namespace std;
 
-//constructor
 CalcFunctions::CalcFunctions(){
+    firstNum = " ";
+    secNum = " ";
     oper = ' ';
+    input = " ";
+    output = " ";
 }
 
-
-void CalcFunctions::setFirst(double num1){
+void CalcFunctions::setFirst(string num1){
     firstNum = num1;
+}
+
+void CalcFunctions::setSec(string num2){
+    secNum = num2;
 }
 
 void CalcFunctions::setOper(char op){
     oper = op;
 }
 
-void CalcFunctions::setSec(double num2){
-    secNum = num2;
-}
-
-
 void CalcFunctions::display(){
     cout << "-------------------------------" << endl;
+
+    //line 1 and line 2
     line1();
-    if(!secNum){
-        line2();
-    }
-    else{
-        cout << "-                             -" << endl;
-    }
+    line2();
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
     cout << "-      +       |       -      -" << endl;
@@ -48,72 +46,61 @@ void CalcFunctions::display(){
 }
 
 void CalcFunctions::line1(){
-    ostringstream os;
-    os << firstNum;
-    string operation = os.str();
-    ostringstream is;
-
-    if(!secNum){
-        is << secNum;
-        operation += oper;
-        os << secNum;
-        operation += is.str();
-
-        cout << "-";
-        for(unsigned i = 0; i < 28 - operation.length(); i++){
-            cout << " ";
-        }
-        cout << operation << " -" << endl;
+    if(secNum != " "){
+        input += secNum;
     }
     else if(oper != ' '){
-        operation += oper;
-        cout << "-";
-        for(unsigned i = 0; i < 28 - operation.length(); i++){
-            cout << " ";
-        }
-        cout << operation << " -" << endl;
+        input += oper;
     }
-    else if(!firstNum){
-        cout << "-";
-        for(unsigned i = 0; i < 28 - operation.length(); i++){
-            cout << " ";
-        }
-        cout << operation << " -" << endl;
+    else if(firstNum != " "){
+        input += firstNum;
     }
-    else{
-        cout << "-                             -" << endl;
+
+    cout << "-";
+    for(unsigned i = 0; i < 28 - input.length(); i++){
+        cout << " ";
     }
+    cout << input << " -" << endl;
 }
 
 void CalcFunctions::line2(){
-    operations();
-    ostringstream fs;
-    fs << answer;
-    string result = fs.str();
 
-    if(!answer){
+    if(secNum != " "){
+        operation();
         cout << "-";
-        for(unsigned i = 0; i < 28 - result.length(); i++){
+        for(unsigned i = 0; i < 28 - answer.length(); i++){
             cout << " ";
         }
-        cout << result << " -" << endl;
+        cout << answer << " -" << endl;
     }
     else{
         cout << "-                             -" << endl;
     }
 }
 
-void CalcFunctions::operations(){
+void CalcFunctions::operation(){
+    double num1, num2;
+    double total = 0;
+    num1 = stod(firstNum);
+    num2 = stod(secNum);
+
     if(oper == '+'){
-        answer = firstNum + secNum;
+        total += num1 + num2;
     }
     else if(oper == '-'){
-        answer = firstNum - secNum;
+        total += num1 - num2;
     }
     else if(oper == '*'){
-        answer = firstNum * secNum;
+        total += num1 * num2;
     }
     else if(oper == '/'){
-        answer = firstNum / secNum;
+        total += num1 / num2;
+    }  
+    // answer = to_string(total);
+    ostringstream os;
+    os << total;
+    answer = os.str();
+    if(answer == "inf"){
+        answer = "error";
     }
 }

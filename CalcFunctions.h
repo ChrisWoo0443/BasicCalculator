@@ -2,28 +2,30 @@
 #define _CalcFunctions_h_
 #include <sstream>
 
+using namespace std;
 
 class CalcFunctions{
 
     private:
-        double firstNum;
-        double secNum;
+        string firstNum;
+        string secNum;
         char oper;
-        double answer;
+        string answer;
+        string input;
+        string output;
 
     public:
         CalcFunctions();
-
-
-        void setFirst(double);
+        void setFirst(string);
         void setOper(char);
-        void setSec(double);
+        void setSec(string);
 
-        void display(); //display the numbers on the screen
+        void display();
         void line1();
         void line2();
 
-        void operations();
+        void operation();
+
 };
 
 
