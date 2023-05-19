@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <unistd.h>
 #include "CalcFunctions.h"
 
 using namespace std;
@@ -65,6 +66,8 @@ int main(){
 
                     // cout << "OFF (y/n)" << endl;
                     // cin >> nums;
+                    cout.flush();
+                    sleep(3);
 
                     result = calc1.getAnswer();
                 }
