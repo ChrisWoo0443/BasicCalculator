@@ -24,10 +24,10 @@ int main(){
         calc1.display();
 
         cin >> num1;
-        while(!is_number(num1)){
-            cout << "Error: not a number, try again" << endl;
-            cin >> num1;
-        }
+        // while(!is_number(num1)){
+        //     cout << "Error: not a number, try again" << endl;
+        //     cin >> num1;
+        // }
         calc1.setFirst(num1);
         calc1.display();
 
@@ -40,10 +40,10 @@ int main(){
         calc1.display();
 
         cin >> num2;
-        while(!is_number(num2)){
-            cout << "Error: not a number, try again" << endl;
-            cin >> num2;
-        }
+        // while(!is_number(num2)){
+        //     cout << "Error: not a number, try again" << endl;
+        //     cin >> num2;
+        // }
         calc1.setSec(num2);
         calc1.display();
 

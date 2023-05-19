@@ -40,7 +40,7 @@ void CalcFunctions::display(){
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
-    cout << "-              |              -" << endl;
+    cout << "-              |      ANS     -" << endl;
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
 }
