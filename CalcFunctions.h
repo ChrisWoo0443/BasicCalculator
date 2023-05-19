@@ -19,12 +19,16 @@ class CalcFunctions{
         void setFirst(string);
         void setOper(char);
         void setSec(string);
+        void setAnswer(string);
 
         void display();
+        void prev();
         void line1();
         void line2();
 
         void operation();
+        string getAnswer();
+
 
 };
 

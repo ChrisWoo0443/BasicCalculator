@@ -24,12 +24,17 @@ void CalcFunctions::setOper(char op){
     oper = op;
 }
 
+void CalcFunctions::setAnswer(string ans){
+    answer = ans;
+}
+
 void CalcFunctions::display(){
     cout << "-------------------------------" << endl;
 
-    //line 1 and line 2
+    prev();
     line1();
     line2();
+
     cout << "-------------------------------" << endl;
     cout << "-              |              -" << endl;
     cout << "-      +       |       -      -" << endl;
@@ -44,6 +49,15 @@ void CalcFunctions::display(){
     cout << "-              |              -" << endl;
     cout << "-------------------------------" << endl;
 }
+
+void CalcFunctions::prev(){
+    cout << "-";
+    for(unsigned i = 0; i < 28 - answer.length(); i++){
+        cout << " ";
+    }
+    cout << answer << " -" << endl;
+}
+
 
 void CalcFunctions::line1(){
     if(secNum != " "){
@@ -103,4 +117,8 @@ void CalcFunctions::operation(){
     if(answer == "inf"){
         answer = "error";
     }
+}
+
+string CalcFunctions::getAnswer(){
+    return answer;
 }
