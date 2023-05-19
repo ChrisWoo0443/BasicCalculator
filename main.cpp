@@ -67,7 +67,7 @@ int main(){
                     // cout << "OFF (y/n)" << endl;
                     // cin >> nums;
                     cout.flush();
-                    sleep(3);
+                    sleep(2);
 
                     result = calc1.getAnswer();
                 }
