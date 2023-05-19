@@ -28,6 +28,22 @@ void CalcFunctions::setAnswer(string ans){
     answer = ans;
 }
 
+void CalcFunctions::setEquation(string eq){
+    equation = eq;
+}
+
+void CalcFunctions::check(int num){
+    checkPrev = num;
+}
+
+string CalcFunctions::getAnswer(){
+    return answer;
+}
+
+string CalcFunctions::getInput(){
+    return input;
+}
+
 void CalcFunctions::display(){
     cout << "Calculator" << endl;
     cout << "-------------------------------" << endl;
@@ -53,12 +69,19 @@ void CalcFunctions::display(){
 
 void CalcFunctions::prev(){
     cout << "-";
-    for(unsigned i = 0; i < 28 - answer.length(); i++){
-        cout << " ";
+    if(checkPrev == 0){
+        for(unsigned i = 0; i < 28 - answer.length(); i++){
+            cout << " ";
+        }
+        cout << answer << " -" << endl;
     }
-    cout << answer << " -" << endl;
+    else{
+        for(unsigned i = 0; i < 28 - (equation.length() + 1 + answer.length()); i++){
+            cout << " ";
+        }
+        cout << equation << "=" << answer << " -" << endl;
+    }
 }
-
 
 void CalcFunctions::line1(){
     if(secNum != " "){
@@ -79,6 +102,7 @@ void CalcFunctions::line1(){
 }
 
 void CalcFunctions::line2(){
+
 
     if(secNum != " "){
         operation();
@@ -120,6 +144,3 @@ void CalcFunctions::operation(){
     }
 }
 
-string CalcFunctions::getAnswer(){
-    return answer;
-}

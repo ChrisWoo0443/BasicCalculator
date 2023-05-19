@@ -5,7 +5,6 @@
 using namespace std;
 
 class CalcFunctions{
-
     private:
         string firstNum;
         string secNum;
@@ -13,6 +12,8 @@ class CalcFunctions{
         string answer;
         string input;
         string output;
+        string equation;
+        int checkPrev;
 
     public:
         CalcFunctions();
@@ -20,6 +21,12 @@ class CalcFunctions{
         void setOper(char);
         void setSec(string);
         void setAnswer(string);
+        void setEquation(string);
+        void check(int);
+        string getAnswer();
+        string getInput();
+        
+
 
         void display();
         void prev();
@@ -27,9 +34,6 @@ class CalcFunctions{
         void line2();
 
         void operation();
-        string getAnswer();
-
-
 };
 
 
