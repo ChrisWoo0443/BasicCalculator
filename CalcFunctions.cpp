@@ -29,6 +29,7 @@ void CalcFunctions::setAnswer(string ans){
 }
 
 void CalcFunctions::display(){
+    cout << "Calculator" << endl;
     cout << "-------------------------------" << endl;
 
     prev();
